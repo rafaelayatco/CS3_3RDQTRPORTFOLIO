@@ -1,1 +1,204 @@
-cf
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2nd Quarter Portfolio">
+    <meta name="keywords" content="2nd Graded Exercise">
+    <meta name="author" content="R YATCO">
+
+    <title>Centralized Club/Organization Application Form</title>
+    <link rel="icon" type="image/png" href="../../CS3_2NDQTRPORTFOLIO/assets/pshslogo.png">
+
+<style>
+body {
+font-family: Aptos, sans-serif;
+background-color: #f4f6f8;
+padding: 20px;
+}
+
+form {
+max-width: 1000px;
+margin: auto;
+background: #ffd5d5;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(68, 65, 65, 0.1);
+}
+
+fieldset {
+margin-bottom: 20px;
+border: 1px solid #353232;
+padding: 15px;
+}
+
+legend {
+font-weight: bold;
+padding: 0 10px;
+}
+
+label {
+display: block;
+margin: 8px;
+}
+
+input, textarea {
+width: 850px; 
+height: 30px; 
+padding: 6px;
+margin: 8px;
+border: 1px solid #aaa;
+border-radius: 4px;
+}
+
+input[type="radio"] { 
+    width: auto; 
+    margin-right: 8px; 
+    padding: 6px;
+}
+
+select {
+    width: 850px; 
+    height: 50px; 
+    padding: 6px;
+    margin: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+border-color: #cc0000;
+background-color: #fff0f5;
+outline: none;
+}
+
+.invalid {
+border: 2px solid red;
+background-color: #ffecec;
+}
+
+.buttons {
+text-align: center;
+}
+
+button {
+padding: 10px 15px;
+margin: 5px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button[type="submit"] {
+background-color: #0077cc;
+color: white;
+}
+
+button[type="reset"] {
+background-color: #888;
+color: white;
+}
+</style>
+
+</head>
+<body>
+
+<form method="post" action="submit" onsubmit="return confirmSubmission()" onreset="return confirmReset()">
+
+<fieldset>
+<legend>Personal Information</legend>
+
+<label>
+Student ID:
+<input type="number" name="student_id" required onblur="checkifEmpty(this)">
+</label>
+
+<label>
+Full Name:
+<input type="text" name="full_name" required onblur="checkifEmpty(this)">
+</label>
+
+<label>
+Birthday:
+<input type="date" name="birthday" required>
+</label>
+
+<label>
+Email Address:
+<input type="email" name="email" required onblur="checkifEmpty(this)">
+</label>
+</fieldset>
+
+<fieldset>
+<legend>School Details</legend>
+
+<label>
+Mobile Phone:
+<input type="text" name="mobile" required onblur="checkifEmpty(this)">
+</label>
+
+<label>
+Grade Level:
+<select name="grade_level" required>
+<option value="">Select Grade Level</option>
+<option value="g7">Grade 7</option>
+<option value="g8">Grade 8</option>
+<option value="g9">Grade 9</option>
+<option value="g10">Grade 10</option>
+<option value="g11">Grade 11</option>
+<option value="g12">Grade 12</option>
+</select>
+</label>
+
+<label>
+Intern / Extern:
+<input type="radio" name="status" value="intern" required> Intern
+<input type="radio" name="status" value="extern"> Extern
+</label>
+
+<label>
+Preferred Organization / Club:
+<select name="club" required>
+<option value="">Select Club</option>
+<option value="debate_club">Invictus</option>
+<option value="swimming_club">Flux</option>
+<option value="frisbee_club">Alianti</option>
+<option value="soccer_club">Labuyo</option>
+<option value="art_club">Likha</option>
+<option value="mun_club">Model United Nations</option>
+<option value="other_clubs">Others</option>
+</select>
+</label>
+
+<label>
+Why do you want to join?
+<textarea name="reason" rows="4" required onblur="checkifEmpty(this)"></textarea>
+</label>
+</fieldset>
+
+<div class="buttons">
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+</div>
+</form>
+
+<script>
+function confirmSubmission() {
+return confirm("Are you confirming your application?");
+}
+
+function confirmReset() {
+return confirm("Are you sure you want to reset?");
+}
+
+function checkifEmpty(field) {
+if (field.value.trim() === "") {
+field.className.add("invalid");
+} else {
+field.className.remove("invalid");
+}
+}
+
+</script>
+</body>
+</html>
