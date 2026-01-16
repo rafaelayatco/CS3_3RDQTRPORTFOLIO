@@ -110,22 +110,22 @@ color: white;
 
 <label>
 Student ID:
-<input type="number" name="student_id" required onfocus="changeColor(this)" onblur="resetColor(this)">
+<input  onfocus="changeColor(this)" onblur="resetColor(this)" type="number" name="student_id" required>
 </label>
 
 <label>
 Full Name:
-<input type="text" name="full_name" required  onfocus="changeColor(this)" onblur="resetColor(this)>
+<input onfocus="changeColor(this)" onblur="resetColor(this)" type="text" name="full_name" required>
 </label>
 
 <label>
 Birthday:
-<input type="date" name="birthday" required>
+<input type="date" name="birthday" required onfocus="changeColor(this)" onblur="resetColor(this)">
 </label>
 
 <label>
 Email Address:
-<input type="email" name="email" required  onfocus="changeColor(this)" onblur="resetColor(this)>
+<input  onfocus="changeColor(this)" onblur="resetColor(this)" type="email" name="email" required>
 </label>
 </fieldset>
 
@@ -134,12 +134,12 @@ Email Address:
 
 <label>
 Mobile Phone:
-<input type="text" name="mobile" required  onfocus="changeColor(this)" onblur="resetColor(this)">
+<input onfocus="changeColor(this)" onblur="resetColor(this)" type="text" name="mobile" required>
 </label>
 
 <label>
 Grade Level:
-<select name="grade_level" required  onfocus="changeColor(this)" onblur="resetColor(this)>
+<select name="grade_level" required onfocus="changeColor(this)" onblur="resetColor(this)">
 <option value="">Select Grade Level</option>
 <option value="g7">Grade 7</option>
 <option value="g8">Grade 8</option>
@@ -158,7 +158,7 @@ Intern / Extern:
 
 <label>
 Preferred Organization / Club:
-<select name="club" required  onfocus="changeColor(this)" onblur="resetColor(this)>
+<select name="club" required onfocus="changeColor(this)" onblur="resetColor(this)" >
 <option value="">Select Club</option>
 <option value="debate_club">Invictus</option>
 <option value="swimming_club">Flux</option>
@@ -172,7 +172,7 @@ Preferred Organization / Club:
 
 <label>
 Why do you want to join?
-<textarea name="reason" rows="4" required  onfocus="changeColor(this)" onblur="resetColor(this)></textarea>
+<textarea name="reason" rows="4" required  onfocus="changeColor(this)" onblur="resetColor(this)"></textarea>
 </label>
 </fieldset>
 
@@ -201,7 +201,7 @@ function resetColor(ele) {
   console.log(ele);
   ele.style.backgroundColor = "white";
 } 
-}
+
 
 </script>
 </body>
