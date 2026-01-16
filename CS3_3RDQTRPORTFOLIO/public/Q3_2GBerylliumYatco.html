@@ -110,12 +110,12 @@ color: white;
 
 <label>
 Student ID:
-<input type="number" name="student_id" required onblur="checkifEmpty(this)">
+<input type="number" name="student_id" required onfocus="changeColor(this)" onblur="resetColor(this)">
 </label>
 
 <label>
 Full Name:
-<input type="text" name="full_name" required onblur="checkifEmpty(this)">
+<input type="text" name="full_name" required  onfocus="changeColor(this)" onblur="resetColor(this)>
 </label>
 
 <label>
@@ -125,7 +125,7 @@ Birthday:
 
 <label>
 Email Address:
-<input type="email" name="email" required onblur="checkifEmpty(this)">
+<input type="email" name="email" required  onfocus="changeColor(this)" onblur="resetColor(this)>
 </label>
 </fieldset>
 
@@ -134,12 +134,12 @@ Email Address:
 
 <label>
 Mobile Phone:
-<input type="text" name="mobile" required onblur="checkifEmpty(this)">
+<input type="text" name="mobile" required  onfocus="changeColor(this)" onblur="resetColor(this)">
 </label>
 
 <label>
 Grade Level:
-<select name="grade_level" required>
+<select name="grade_level" required  onfocus="changeColor(this)" onblur="resetColor(this)>
 <option value="">Select Grade Level</option>
 <option value="g7">Grade 7</option>
 <option value="g8">Grade 8</option>
@@ -158,7 +158,7 @@ Intern / Extern:
 
 <label>
 Preferred Organization / Club:
-<select name="club" required>
+<select name="club" required  onfocus="changeColor(this)" onblur="resetColor(this)>
 <option value="">Select Club</option>
 <option value="debate_club">Invictus</option>
 <option value="swimming_club">Flux</option>
@@ -171,7 +171,7 @@ Preferred Organization / Club:
 </label>
 
 <label>
-Why do you want to join?
+Why do you want to join  onfocus="changeColor(this)" onblur="resetColor(this)?
 <textarea name="reason" rows="4" required onblur="checkifEmpty(this)"></textarea>
 </label>
 </fieldset>
@@ -183,6 +183,12 @@ Why do you want to join?
 </form>
 
 <script>
+
+function changeColor(ele) {
+  console.log(ele);
+  ele.style.backgroundColor = "yellow";
+} 
+
 function confirmSubmission() {
 return confirm("Are you confirming your application?");
 }
@@ -191,12 +197,10 @@ function confirmReset() {
 return confirm("Are you sure you want to reset your submission?");
 }
 
-function checkifEmpty(field) {
-if (field.value.trim() === "") {
-field.className.add("invalid submission");
-} else {
-field.className.remove("invalid submission");
-}
+function resetColor(ele) {
+  console.log(ele);
+  ele.style.backgroundColor = "white";
+} 
 }
 
 </script>
