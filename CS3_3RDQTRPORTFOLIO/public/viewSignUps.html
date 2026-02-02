@@ -135,7 +135,7 @@ function displaySignups() {
   // Filter by club
   let list = filter.value === "ALL" ? signups : signups.filter(s => s.club === filter.value);
 
-  // If filtered club has no sign-ups
+  // If filtered club has no sign-ups in its list this shows
   if (list.length === 0) {
     output.innerHTML = "<p class='message'>No sign-ups for this club.</p>";
     total.textContent = 0;
