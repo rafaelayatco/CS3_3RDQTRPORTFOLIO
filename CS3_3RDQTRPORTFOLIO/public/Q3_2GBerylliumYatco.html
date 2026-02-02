@@ -9,200 +9,207 @@
 
     <title>Centralized Club/Organization Application Form</title>
     <link rel="icon" type="image/png" href="../../CS3_2NDQTRPORTFOLIO/assets/pshslogo.png">
-
+    
 <style>
 body {
-font-family: Aptos, sans-serif;
-background-color: #f4f6f8;
-padding: 20px;
+  font-family: 'Aptos', sans-serif;
+  background-color: #f4f6f8;
+  padding: 20px;
 }
 
 form {
-max-width: 1000px;
-margin: auto;
-background: #ffd5d5;
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0 0 10px rgba(68, 65, 65, 0.1);
+  max-width: 900px;
+  margin: auto;
+  background: linear-gradient(135deg, #ffd5d5, #ffe5e5);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 fieldset {
-margin-bottom: 20px;
-border: 1px solid #353232;
-padding: 15px;
+  margin-bottom: 25px;
+  border: 1px solid #c33;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff4f4;
 }
 
 legend {
-font-weight: bold;
-padding: 0 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #cc0000;
 }
 
 label {
-display: block;
-margin: 8px;
+  display: block;
+  margin: 10px 0;
 }
 
-input, textarea {
-width: 850px; 
-height: 30px; 
-padding: 6px;
-margin: 8px;
-border: 1px solid #aaa;
-border-radius: 4px;
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  transition: 0.3s ease;
 }
 
-input[type="radio"] { 
-    width: auto; 
-    margin-right: 8px; 
-    padding: 6px;
+
+input:focus, textarea:focus, select:focus {
+  border-color: #cc0000;
+  outline: none;
 }
 
-select {
-    width: 850px; 
-    height: 50px; 
-    padding: 6px;
-    margin: 8px;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-}
-
-input:focus, select:focus, textarea:focus {
-border-color: #cc0000;
-background-color: #fff0f5;
-outline: none;
-}
-
-.invalid {
-border: 2px solid red;
-background-color: #ffecec;
+input[type="radio"] {
+  width: auto;
 }
 
 .buttons {
-text-align: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
 button {
-padding: 10px 15px;
-margin: 5px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 button[type="submit"] {
-background-color: #0077cc;
-color: white;
+  background-color: #0077cc;
+  color: white;
 }
 
 button[type="reset"] {
-background-color: #888;
-color: white;
+  background-color: #888;
+  color: white;
+}
+
+button[type="button"] {
+  background-color: #28a745;
+  color: white;
 }
 </style>
-
 </head>
+
 <body>
 
-<form method="post" action="submit" onsubmit="return confirmSubmission()" onreset="return confirmReset()">
+<form id="signupForm">
 
 <fieldset>
 <legend>Personal Information</legend>
 
-<label>
-Student ID:
-<input  onfocus="changeColor(this)" onblur="resetColor(this)" type="number" name="student_id" required>
+<label>Student ID:
+<input type="number" name="student_id" required
+       onfocus="changeColor(this)" onblur="resetColor(this)">
 </label>
 
-<label>
-Full Name:
-<input onfocus="changeColor(this)" onblur="resetColor(this)" type="text" name="full_name" required>
+<label>Full Name:
+<input type="text" name="full_name" required
+       onfocus="changeColor(this)" onblur="resetColor(this)">
 </label>
 
-<label>
-Birthday:
-<input type="date" name="birthday" required onfocus="changeColor(this)" onblur="resetColor(this)">
+<label>Birthday:
+<input type="date" name="birthday" required
+       onfocus="changeColor(this)" onblur="resetColor(this)">
 </label>
 
-<label>
-Email Address:
-<input  onfocus="changeColor(this)" onblur="resetColor(this)" type="email" name="email" required>
+<label>Email Address:
+<input type="email" name="email" required
+       onfocus="changeColor(this)" onblur="resetColor(this)">
 </label>
 </fieldset>
 
 <fieldset>
 <legend>School Details</legend>
 
-<label>
-Mobile Phone:
-<input onfocus="changeColor(this)" onblur="resetColor(this)" type="text" name="mobile" required>
+<label>Mobile Phone:
+<input type="text" name="mobile" required
+       onfocus="changeColor(this)" onblur="resetColor(this)">
 </label>
 
-<label>
-Grade Level:
-<select name="grade_level" required onfocus="changeColor(this)" onblur="resetColor(this)">
-<option value="">Select Grade Level</option>
-<option value="g7">Grade 7</option>
-<option value="g8">Grade 8</option>
-<option value="g9">Grade 9</option>
-<option value="g10">Grade 10</option>
-<option value="g11">Grade 11</option>
-<option value="g12">Grade 12</option>
+<label>Grade Level:
+<select name="grade_level" required
+        onfocus="changeColor(this)" onblur="resetColor(this)">
+  <option value="">Select Grade Level</option>
+  <option value="Grade 7">Grade 7</option>
+  <option value="Grade 8">Grade 8</option>
+  <option value="Grade 9">Grade 9</option>
+  <option value="Grade 10">Grade 10</option>
+  <option value="Grade 11">Grade 11</option>
+  <option value="Grade 12">Grade 12</option>
 </select>
 </label>
 
 <label>
 Intern / Extern:
-<input type="radio" name="status" value="intern" required> Intern
-<input type="radio" name="status" value="extern"> Extern
+<input type="radio" name="status" value="Intern" required> Intern
+<input type="radio" name="status" value="Extern"> Extern
 </label>
 
-<label>
-Preferred Organization / Club:
-<select name="club" required onfocus="changeColor(this)" onblur="resetColor(this)" >
-<option value="">Select Club</option>
-<option value="debate_club">Invictus</option>
-<option value="swimming_club">Flux</option>
-<option value="frisbee_club">Alianti</option>
-<option value="soccer_club">Labuyo</option>
-<option value="art_club">Likha</option>
-<option value="mun_club">Model United Nations</option>
-<option value="other_clubs">Others</option>
+<label>Preferred Organization / Club:
+<select name="club" required
+        onfocus="changeColor(this)" onblur="resetColor(this)">
+  <option value="">Select Club</option>
+  <option value="Invictus">Invictus</option>
+  <option value="Flux">Flux</option>
+  <option value="Alianti">Alianti</option>
+  <option value="Labuyo">Labuyo</option>
+  <option value="Likha">Likha</option>
+  <option value="Model United Nations">Model United Nations</option>
 </select>
 </label>
 
-<label>
-Why do you want to join?
-<textarea name="reason" rows="4" required  onfocus="changeColor(this)" onblur="resetColor(this)"></textarea>
+<label>Why do you want to join?
+<textarea name="reason" rows="4" required
+          onfocus="changeColor(this)" onblur="resetColor(this)"></textarea>
 </label>
 </fieldset>
 
 <div class="buttons">
 <button type="submit">Submit</button>
 <button type="reset">Reset</button>
+<button type="button" onclick="goToView()">View Sign-Ups</button>
 </div>
+
 </form>
 
 <script>
 
 function changeColor(ele) {
-  console.log(ele);
   ele.style.backgroundColor = "yellow";
-} 
-
-function confirmSubmission() {
-return confirm("Are you confirming your application?");
-}
-
-function confirmReset() {
-return confirm("Are you sure you want to reset your submission?");
 }
 
 function resetColor(ele) {
-  console.log(ele);
   ele.style.backgroundColor = "white";
-} 
+}
 
+document.getElementById("signupForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
+  if (!confirm("Are you confirming your application?")) return;
+
+  const data = Object.fromEntries(new FormData(this).entries());
+  let signups = JSON.parse(localStorage.getItem("clubSignups")) || [];
+  signups.push(data);
+  localStorage.setItem("clubSignups", JSON.stringify(signups));
+
+  alert("Application saved successfully!");
+  this.reset();
+});
+
+document.getElementById("signupForm").addEventListener("reset", function (e) {
+  if (!confirm("Are you sure you want to reset your submission?")) {
+    e.preventDefault();
+  }
+});
+
+function goToView() {
+  window.location.href = "viewSignUps.html";
+}
 </script>
+
 </body>
 </html>
