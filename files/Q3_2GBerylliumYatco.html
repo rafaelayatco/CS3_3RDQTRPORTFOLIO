@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3rd Quarter Portfolio">
+    <meta name="keywords" content="2nd Graded Exercise">
+    <meta name="author" content="R YATCO">
+
+    <title>Centralized Club/Organization Application Form</title>
+    <link rel="icon" type="image/png" href="../CS3_2NDQTRPORTFOLIO/assets/pshslogo.png">
+    
+<style>
+body {
+  font-family: 'Aptos', sans-serif;
+  background-color: #f4f6f8;
+  padding: 20px;
+}
+
+form {
+  max-width: 900px;
+  margin: auto;
+  background: linear-gradient(135deg, #ffd5d5, #ffe5e5);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+fieldset {
+  margin-bottom: 25px;
+  border: 1px solid #c33;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff4f4;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #cc0000;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+
+input:focus, textarea:focus, select:focus {
+  border-color: #cc0000;
+  outline: none;
+}
+
+input[type="radio"] {
+  width: auto;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #0077cc;
+  color: white;
+}
+
+button[type="reset"] {
+  background-color: #888;
+  color: white;
+}
+
+button[type="button"] {
+  background-color: #28a745;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<form id="signupForm">
+
+<fieldset>
+<legend>Personal Information</legend>
+
+<label>Student ID:
+<input type="number" name="student_id" required
+       onfocus="changeColor(this)" onblur="resetColor(this)">
+</label>
+
+<label>Full Name:
+<input type="text" name="full_name" required
+       onfocus="changeColor(this)" onblur="resetColor(this)">
+</label>
+
+<label>Birthday:
+<input type="date" name="birthday" required
+       onfocus="changeColor(this)" onblur="resetColor(this)">
+</label>
+
+<label>Email Address:
+<input type="email" name="email" required
+       onfocus="changeColor(this)" onblur="resetColor(this)">
+</label>
+</fieldset>
+
+<fieldset>
+<legend>School Details</legend>
+
+<label>Mobile Phone:
+<input type="text" name="mobile" required
+       onfocus="changeColor(this)" onblur="resetColor(this)">
+</label>
+
+<label>Grade Level:
+<select name="grade_level" required
+        onfocus="changeColor(this)" onblur="resetColor(this)">
+  <option value="">Select Grade Level</option>
+  <option value="Grade 7">Grade 7</option>
+  <option value="Grade 8">Grade 8</option>
+  <option value="Grade 9">Grade 9</option>
+  <option value="Grade 10">Grade 10</option>
+  <option value="Grade 11">Grade 11</option>
+  <option value="Grade 12">Grade 12</option>
+</select>
+</label>
+
+<label>
+Intern / Extern:
+<input type="radio" name="status" value="Intern" required> Intern
+<input type="radio" name="status" value="Extern"> Extern
+</label>
+
+<label>Preferred Organization / Club:
+<select name="club" required
+        onfocus="changeColor(this)" onblur="resetColor(this)">
+  <option value="">Select Club</option>
+  <option value="Invictus">Invictus</option>
+  <option value="Flux">Flux</option>
+  <option value="Alianti">Alianti</option>
+  <option value="Labuyo">Labuyo</option>
+  <option value="Likha">Likha</option>
+  <option value="Model United Nations">Model United Nations</option>
+</select>
+</label>
+
+<label>Why do you want to join?
+<textarea name="reason" rows="4" required
+          onfocus="changeColor(this)" onblur="resetColor(this)"></textarea>
+</label>
+</fieldset>
+
+<div class="buttons">
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+<button type="button" onclick="goToView()">View Sign-Ups</button>
+</div>
+
+</form>
+
+<script>
+
+function changeColor(ele) {
+  ele.style.backgroundColor = "yellow";
+}
+
+function resetColor(ele) {
+  ele.style.backgroundColor = "white";
+}
+
+document.getElementById("signupForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  if (!confirm("Are you confirming your application?")) return;
+
+  const data = Object.fromEntries(new FormData(this).entries());
+  let signups = JSON.parse(localStorage.getItem("clubSignups")) || [];
+  signups.push(data);
+  localStorage.setItem("clubSignups", JSON.stringify(signups));
+
+  alert("Application saved successfully!");
+  this.reset();
+});
+
+document.getElementById("signupForm").addEventListener("reset", function (e) {
+  if (!confirm("Are you sure you want to reset your submission?")) {
+    e.preventDefault();
+  }
+});
+
+function goToView() {
+  window.location.href = "viewSignUps.html";
+}
+</script>
+
+</body>
+</html>
