@@ -130,6 +130,7 @@ button:hover{
 
 <label>Genre:</label>
 <select id="genre" required>
+<option value="" disabled selected>Select</option>
 <option>Action</option>
 <option>Romance</option>
 <option>Comedy</option>
@@ -164,13 +165,14 @@ button:hover{
 
 <script>
 
-// Shows the main important HTML elements
+
 const form = document.getElementById("movieForm");
 const movieList = document.getElementById("movieList");
 const stars = document.querySelectorAll("#starContainer .star");
 
 let rating = 0;
 
+// Shows the main important HTML elements
 
 
 stars.forEach(star=>{
