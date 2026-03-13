@@ -17,10 +17,23 @@
   src: url('assets/MGF-PopstarPersonalUse.otf') format('opentype');
 }
 
-body{
-    font-family: Arial, sans-serif;
+@font-face {
+  font-family: 'Voltra';
+  src: url('assets/Voltra.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Voltra', Arial, sans-serif;
     background:#ffccdd;
     padding:30px;
+}
+
+h3 {
+    font-family: 'Voltra', Arial, sans-serif;
+}
+
+button {
+    font-family: 'Voltra', Arial, sans-serif;
 }
 
 .container{
@@ -132,6 +145,7 @@ button:hover{
 <select id="genre" required>
 <option value="" disabled selected>Select</option>
 <option>Action</option>
+<option>Animated</option>
 <option>Romance</option>
 <option>Comedy</option>
 <option>Drama</option>
@@ -293,8 +307,6 @@ function deleteMovie(index){
     }
 
 }
-
-
 
 displayMovies(); // shows the movies given
 
